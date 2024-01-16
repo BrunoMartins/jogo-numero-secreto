@@ -1,7 +1,9 @@
 let listaDeNumerosSorteados = [];
+let listaDeChutes = [];
 let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
-let tentativas = 1;
+let tentativas = 0;
+
 
 
 function exibirTextoNaTela(id, texto) {
@@ -25,7 +27,10 @@ function verificarChute() {
     if (chute > numeroLimite){
         exibirTextoNaTela('#paragrafo-principal', `Valor inválido,escolha um número entre 1 e ${numeroLimite}`); 
     }else{
+        tentativas++;
         verificarTentativa();
+        listaDeChutes.push(chute)
+        exibirChutesNaTela();
         if (chute == numeroSecreto) {
             exibirTextoNaTela('#titulo', 'Acertou!');
             let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
@@ -41,11 +46,11 @@ function verificarChute() {
             } else {
                 exibirTextoNaTela('#paragrafo-principal', 'O número secreto é maior');
             }
-            tentativas++;
+            
             limparCampo();    
             }
 }
-    let tentativasRestantes = (tentativaLimite + 1) - tentativas;
+    let tentativasRestantes = tentativaLimite - tentativas;
     exibirTextoNaTela('#paragrafo-secundario', `Tentativas restantes: ${tentativasRestantes}`);
     
     
@@ -74,13 +79,17 @@ function limparCampo() {
 function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
-    tentativas = 1;
+    tentativas = 0;
+    listaDeChutes = [];
     exibirTextoNaTela('#paragrafo-secundario', '');
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true);
     document.getElementById('selecionarDificuldade').removeAttribute('disabled');
     document.getElementById('dificuldade').removeAttribute('disabled');
     document.getElementById('chute').setAttribute('disabled', true);
+    let campoChutes = document.getElementById('paragrafo-chute');
+    campoChutes.innerHTML = '';
+    
 
 }
 
@@ -108,6 +117,15 @@ function selecionarDificuldade() {
     document.getElementById('chute').removeAttribute('disabled');
     
 }
+
+function exibirChutesNaTela() {
+    let textoChutes = "Valores chutados: " + listaDeChutes.join(', ');
+    let campoChutes = document.getElementById('paragrafo-chute')
+    campoChutes.innerHTML = textoChutes;
+}
+
+
+
 
 
 
