@@ -24,7 +24,7 @@ function verificarChute() {
     
     let chute = document.querySelector('input').value;
 
-    if (chute > numeroLimite){
+    if (chute > numeroLimite || chute < 0){
         exibirTextoNaTela('#paragrafo-principal', `Valor inválido,escolha um número entre 1 e ${numeroLimite}`); 
     }else{
         tentativas++;
