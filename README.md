@@ -1,7 +1,7 @@
 <h1>Jogo do número secreto</h1>
 
 <h2>🔖 Sobre</h2>
-<p>Projeto desenvolvido durante o curso de Javascript da alura.</p>
+<p>Projeto desenvolvido durante o curso de Javascript da alura. Essa é uma aplicação de um jogo, onde o usuário deve acertar o número aleatório que foi sorteado.</p>
 
 ## 🚀 Tecnologias
 <div>
