@@ -3,7 +3,7 @@
 <h2>🔖 Sobre</h2>
 <p>Projeto desenvolvido durante o curso de Javascript da alura. Essa é uma aplicação de um jogo, onde o usuário deve acertar o número aleatório que foi sorteado.</p>
 
-[Acessar a página]( https://vercel.com/new/bruno-martins-projects-11f41919/success?developer-id=&external-id=&redirect-url=&branch=main&deploymentUrl=jogo-numero-secreto-rjuji0jbe-bruno-martins-projects-11f41919.vercel.app&projectName=jogo-numero-secreto&s=https%3A%2F%2Fgithub.com%2FBrunoMartins%2Fjogo-numero-secreto&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1)
+[Acessar a página]( https://jogo-numero-secreto-swart-seven.vercel.app/)
 
 ## 🚀 Tecnologias
 <div>
